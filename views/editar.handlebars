@@ -1,0 +1,42 @@
+{{#if sucesso}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Parabéns!</strong> {{sucesso}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/if}}
+<br/>
+<center>
+    <h2>Editar Lugares Existentes no Senhor dos Anéis</h2>
+</center>
+
+<br/>
+
+{{#each postagem}}
+
+    <div class="formCadastrar">
+
+        <form action="/editar" method="POST" enctype="multipart/form-data">
+
+            <input type="hidden" value="{{id}}" name="id">
+
+            <label>Nome do Lugar</label>
+            <input type="text" value="{{titulo}}" name="titulo" class="form-control" required>
+
+            <br/>
+
+            <label>Imagem do Lugar</label>
+            <input type="file" name="conteudo" class="form-control" required>  
+
+            <br/>
+
+            <center>
+                <button type="submit" class="btn btn-primary btn-sm" title="Alterar registro?">confirmar alteração</button>
+            </center>
+
+        </form>
+
+    </div>
+
+{{/each}}

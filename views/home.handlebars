@@ -1,0 +1,121 @@
+{{#if sucesso}}
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Parabéns!</strong> {{sucesso}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/if}}
+{{#if erro}}
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Erro!</strong> {{sucesso}}
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+{{/if}}
+<br/>
+<center>
+    <h2>Lugares Existentes em Senhor dos Anéis</h2>
+    {{#if emailUserLogado}}
+        <h6>Olá <i>{{nomeUserLogado}}</i> seja bem-vindo(a)!</h6>
+    
+        <a href="/cad" >
+            <button class="btn btn-dark btn-sm" title="Deseja cadastrar?">Cadastrar MiddleEarth</button>
+        </a>
+        &nbsp;
+  
+        <a href="/logout">
+            <button class="btn btn-danger btn-sm" title="Deseja deslogar?">Deslogar</button>
+        </a>
+    {{else}}
+        Não possui conta? Clique <a href="/criarConta"><u>aqui</u></a>!
+        &nbsp;
+        <a href="/login">
+            <button class="btn btn-success btn-sm" title="Deseja logar-se?">logar-se</button>
+        </a>
+    {{/if}}
+</center>
+
+        <!-- ISSET
+        if (typeof obj.foo !== 'undefined') {
+        // your code here
+        }
+        -->
+
+<br/>
+
+<h1> </h1>
+
+<div>
+    <center>
+        {{#if emailUserLogado}}
+            {{#each posts}}
+
+                <div class="card" style="width: 14rem;">
+                <img class="card-img-top" src="http://localhost:8000/{{conteudo}}">
+                <div class="card-body">
+                    <span style="font-size: 14px;" class="card-title"><center><b>MiddleEarth</b></center></span>
+
+                        {{titulo}}
+                        <h1> </h1>
+                        <img src="/imagens/reservado/curtir.png" style="width: 25px; margin-top:-6px;">- {{qtdvotos}}<h1> </h1>
+                        
+                        <form action="/votacao" method="POST">
+                        
+                            <input type="hidden" value="{{idpost}}" name="idlugar">
+
+                            <button class="btn btn-primary btn-sm">Votar</button>
+                        </form>
+
+                            <a href="/ed/{{idpost}}" >
+                                <button class="btn btn-success btn-sm">Editar</button>
+                            </a>
+
+                            <a href="/deletar/{{idpost}}" >
+                                <button class="btn btn-danger btn-sm">Deletar</button>
+                            </a>
+
+                </div>
+                </div>
+                
+                <hr>
+                
+            {{/each}}
+
+        {{else}}
+
+            {{#each posts}}
+
+                <div class="card" style="width: 14rem;">
+                <img class="card-img-top" src="http://localhost:8000/{{conteudo}}">
+                    <div class="card-body">
+                        <span style="font-size: 14px;" class="card-title"><center><b>MiddleEarth</b></center></span>
+
+                        {{titulo}}
+                        <h1> </h1>
+                        <img src="/imagens/reservado/curtir.png" style="width: 25px; margin-top:-6px;">- {{qtdvotos}}<h1> </h1>
+                        
+                        <form action="/votacao" method="POST">
+
+                            <input type="hidden" value="{{idpost}}" name="idlugar">
+
+                            <button class="btn btn-primary btn-sm">Votar </button>
+                        </form>
+
+                        <!-- Não possui o editar e o excluir -->
+
+                </div>
+                </div>
+                
+                <hr>
+                
+            {{/each}}
+
+        {{/if}}
+
+        
+    </center>
+</div>
+
+
