@@ -18,7 +18,7 @@ No projeto os usuários cadastrados ou não poderão votar em qual lugar é o me
 
 1° Para gerar a base de dados com as tabelas 'postagens', 'users' e 'Votars' siga o seguinte passo a passo.<br/>
 2° Vá até a pasta do projeto 'Crud_NodeJs', terá uma pasta com o nome 'models' e dentro dela terá 4 arquivos.<br/>
-3º No arquivo 'Post.js', 'Users.js' e 'Votars' terá uma linha comentada em cada arquivo.<br/>
+3º No arquivo 'Post.js', 'Users.js' e 'Votars.js' terá uma linha comentada em cada arquivo.<br/>
 4º Descomentea e execute o comando 'nodemon index.js'(OBS: Verifique os dados da sua conexão "Database, password, host e user" antes de rodar o projeto, caso contrário não irá funcionar).<br/>
 5° Executou o comando, rodou o projeto e gerou as tabelas, volte nos arquivos e comente novamente as linhas.<br/>
 6° Pronto já gerou as tabelas!
@@ -31,7 +31,7 @@ Foram executados os seguintes comandos abaixo na linha de comando (Prompt - cmd)
 <br/>
 Foi utilizado o framework Express, importante para o desenvolvimento em node.
 
-Instalação do nodemon <i><b>npm install nodemon -g</b><i>
+Instalação do nodemon <i><b>npm install nodemon -g</b></i>
 <br/>
 O nodemon é uma ferramenta que ajuda a desenvolver aplicativos baseados no
 nodejs reiniciando automaticamente o aplicativo do nó quando alterações
